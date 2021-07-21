@@ -19,11 +19,29 @@ export default NextAuth({
 
       try {
         await fauna.query(
+          query.If(
+            query.Not(
+              query.Exists(
+                query.Match(
+                  query.Index('user_by_email'),
+                  query.Casefold(user.email)
+                )
+              )
+            ),
+          // if body
           query.Create(
             query.Collection('users'),
             { data: { email } }
+          ),
+          // else body
+          query.Get(
+            query.Match(
+              query.Index('user_by_email'),
+              query.Casefold(user.email)
+            )
           )
         )
+      )
 
         return true
       } catch {
