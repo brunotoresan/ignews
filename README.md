@@ -15,7 +15,7 @@ This is a subscription based React news app, where users can sign in with their 
 - Developing a **JAM Stack app** (Javascript, Api, and Markup)
 - Third party authentication for login
 - Using the `Next.JS` framework in order to use both **SSR** (Server Side Rendering) and **SSG** (Static Site Generation)
-- Using `FaunaDB` to store users and subscription data in a Non-SQL database great for serverless applications
+- Using `FaunaDB` to store users and subscription data with a serverless, transactional, non-SQL database accessible via cloud API
 - Using **Stripe** to make easy and reliable payments via API
 - Using **Prismic CMS** in order to store and edit the app's post
 
