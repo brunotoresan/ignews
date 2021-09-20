@@ -57,6 +57,6 @@ describe('SubscribeButton component', () => {
     const subscribeButton = screen.getByText('Subscribe now')
     fireEvent.click(subscribeButton)
 
-    expect(pushMock).toHaveBeenCalled()
+    expect(pushMock).toHaveBeenCalledWith('/posts')
   })  
 })
