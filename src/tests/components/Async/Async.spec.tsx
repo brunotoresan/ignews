@@ -16,17 +16,4 @@ describe('Async component', () => {
     })
   })
 
-  it('waits for Invisible button to disappear', async () => {
-    render(<Async />)
-
-    expect(screen.getByText('Hello World')).toBeInTheDocument()
-
-    await waitForElementToBeRemoved(() => {
-      screen.queryByText('Invisible')
-    }, 
-    {
-      interval: 1000
-    })
-  })  
-
 })
